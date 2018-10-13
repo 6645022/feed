@@ -23,7 +23,8 @@ export default class Filter extends Component {
                 <form>
                     <FormGroup controlId="filter" bsSize="large">
                         <FormControl
-                            componentClass="textarea"
+                            autoFocus
+                            type="text"
                             placeholder="Filter"
                             onChange={event => this.handleChange(event)}
                         />

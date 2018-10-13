@@ -5,7 +5,7 @@ const express = require('express'),
 import {routes}  from './routes/index';
 
 
-
+process.env.PORT = '80';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

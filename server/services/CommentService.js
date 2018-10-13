@@ -11,7 +11,7 @@ class CommentService{
              query  ={ 'email' : { '$regex' : queryString, '$options' : 'i' } }
         }
         try {
-            const res = await commentSchema.find(query).exec();
+            const res = await commentSchema.find(query).sort({'createdDate': 'desc'}).exec();
             return res;
         }
         catch (e){

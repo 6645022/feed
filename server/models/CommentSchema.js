@@ -8,7 +8,8 @@ class CommentSchema extends Mongoose{
         let schema = new mongoose.Schema({
                 email     : {type:String,required:true,index:true},
                 message   : {type:String,required:true},
-                avatar : {type:String,required:true}
+                avatar : {type:String,required:true},
+                createdDate : {type:Date,default: Date.now}
         });
         return mongoose.model('Comments',schema)
     };
