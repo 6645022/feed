@@ -1,0 +1,8 @@
+body {
+  padding: 50px;
+  background-color: #e9eaeb !important;
+}
+#container {
+  display: flex;
+  justify-content: center;
+}

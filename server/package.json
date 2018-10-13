@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2-dev start server-wrapper.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "md5": "^2.2.1",
+    "mongoose": "^5.3.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "6.24.1",
+    "babel-register": "6.26.0"
+  }
+}
