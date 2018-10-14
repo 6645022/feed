@@ -14,7 +14,7 @@ Web page that contains a comment feed with the ability to insert new comments an
 
 ## Built With
 
-####Client
+#### Client
 ___
 Wrote in React Framework
 
@@ -30,7 +30,7 @@ Client application running by default on port 3000
 
 **Client Endpoint : [http://localhost:3000](http://localhost:3000)**    
 
-####Server
+#### Server
 
 Wrote in Express Framework(Node.js) 
 
