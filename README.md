@@ -15,12 +15,12 @@ Web page that contains a comment feed with the ability to insert new comments an
 ## Built With
 
 #### Client
-___
+
 Wrote in React Framework
 
 Client application running by default on port 3000
 
-######NPM commands
+###### NPM commands
 
 * ```cd client```
 
@@ -38,7 +38,7 @@ Wrote in Express Framework(Node.js)
 
 Server application running by default on port 5000
 
-######NPM commands
+###### NPM commands
 
 * ```cd server```
 
