@@ -2,15 +2,19 @@ import React from 'react';
 import Form from './Form'
 import List from './List'
 import Filter from './Filter'
+import WindowModel from './WindowModel'
+
 import {Comments} from '../services/Comments'
 
 class Feed extends React.Component{
     constructor(props){
         super(props);
+
+        this.windowModelRef = React.createRef();
         this.commentsService = new Comments();
-        // Set initial state
         this.state = {
-            data:[]
+            data:[],
+            commentLastActivity:{}
         }
     }
      async componentDidMount(){
@@ -49,6 +53,16 @@ class Feed extends React.Component{
             console.log('error',e)
         }
     }
+    handleItemClick =async(email)=>{
+        try {
+            const res = await this.commentsService.getLastActivity(email);
+            this.setState({commentLastActivity:res.data});
+            this.windowModelRef.current.openModal();
+            }catch(e) {
+                console.log('error',e)
+        }
+    }
+
     render(){
         return (
             <div id="feed">
@@ -58,11 +72,12 @@ class Feed extends React.Component{
                     </div>
                     <div className="card-body list-container">
                         <Filter filter={this.filter}/>
-                        <List items={this.state.data}/>
+                        <List items={this.state.data} handleItemClick={this.handleItemClick}/>
                     </div>
                 </div>
+                <WindowModel ref={this.windowModelRef} item={this.state.commentLastActivity}/>
             </div>
-        );
+    );
     }
 }
 export default Feed;

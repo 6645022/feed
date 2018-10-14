@@ -5,8 +5,8 @@ export default class Filter extends Component {
         super(props);
         this.timeout =  0;
     }
-    handleChange(evt){
-        var searchText = evt.target.value;
+    handleChange(event){
+        var searchText = event.target.value;
         if(this.timeout) clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
            this.props.filter(searchText);

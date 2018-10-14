@@ -14,7 +14,11 @@ export class Comments extends Api{
         const res = await this.get(this.route);
         return res
     }
-
+    async getLastActivity(email){
+        const url  = `${this.route}/last-comment/${email}`;
+        const res = await this.get(url);
+        return res
+    }
     async filter(query){
 
         const queryString = {

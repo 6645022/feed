@@ -20,7 +20,7 @@ class CommentService{
     }
     async getLastComment(email){
         try {
-            const res = await commentSchema.findOne(email).sort({'createdDate': 'desc'}).limit(1).exec();
+            const res = await commentSchema.findOne(email,['createdDate','avatar','email']).sort({'createdDate': 'desc'}).limit(1).exec();
             return res;
         }
         catch (e){
