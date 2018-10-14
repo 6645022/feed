@@ -18,6 +18,15 @@ class CommentService{
             throw e
         }
     }
+    async getLastComment(email){
+        try {
+            const res = await commentSchema.findOne(email).sort({'createdDate': 'desc'}).limit(1).exec();
+            return res;
+        }
+        catch (e){
+            throw e
+        }
+    }
      async set(data){
          try {
             let commentModel =  commentSchema();

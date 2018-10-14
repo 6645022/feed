@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {FormGroup, FormControl } from "react-bootstrap";
 
 export default class Filter extends Component {
     constructor(props){
@@ -19,19 +18,16 @@ export default class Filter extends Component {
 
     render() {
         return (
-            <div className="form">
-                <form>
-                    <FormGroup controlId="filter" bsSize="large">
-                        <FormControl
-                            autoFocus
-                            type="text"
-                            placeholder="Filter"
-                            onChange={event => this.handleChange(event)}
-                        />
-
-                    </FormGroup>
-                </form>
-            </div>
+            <form role="form">
+                <div class="form-group">
+                    <input class="form-control"
+                           autoFocus
+                           type="text"
+                           placeholder="Filter"
+                           onChange={event => this.handleChange(event)}
+                    />
+                </div>
+            </form>
         );
     }
 }

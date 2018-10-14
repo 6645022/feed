@@ -3,7 +3,6 @@ import Form from './Form'
 import List from './List'
 import Filter from './Filter'
 import {Comments} from '../services/Comments'
-import { Well } from "react-bootstrap";
 
 class Feed extends React.Component{
     constructor(props){
@@ -52,13 +51,16 @@ class Feed extends React.Component{
     }
     render(){
         return (
-            <div>
-                <Well>
-                    <Form onSubmit={this.addComment}/>
-                </Well>
-
-                <Filter filter={this.filter}/>
-                <List items={this.state.data}/>
+            <div id="feed">
+                <div class="card">
+                    <div class="card-body">
+                        <Form onSubmit={this.addComment}/>
+                    </div>
+                    <div class="card-body list-container">
+                        <Filter filter={this.filter}/>
+                        <List items={this.state.data}/>
+                    </div>
+                </div>
             </div>
         );
     }

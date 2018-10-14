@@ -8,6 +8,15 @@ router.get('/',async(req,res)=>{
         const queryString = req.query.query || '';
         const data = await CommentService.get(queryString);
         res.status(200).json(data);
+    }catch (err){
+        res.status(400).json({message:err});
+    }
+});
+
+router.get('/last-comment/:email',async(req,res)=>{
+    try{
+        const data = await CommentService.getLastComment(req.params);
+        res.status(200).json(data);
      }catch (err){
          res.status(400).json({message:err});
      }

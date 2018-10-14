@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl } from "react-bootstrap";
-
 export default class Form extends Component {
     constructor() {
         super();
@@ -27,33 +25,29 @@ export default class Form extends Component {
 
     render() {
         return (
-            <div className="form">
+
+            <div role="form" className="form">
                 <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <FormControl
-                            autoFocus
-                            type="text"
-                            value={this.state.email}
-                            placeholder="Email"
-                            onChange={this.handleChange}
+
+
+                    <div class="form-group has-feedback">
+                        <input class="form-control"
+                               autoFocus
+                               type="email"
+                               value={this.state.email}
+                               placeholder="Email"
+                               onChange={this.handleChange}
                         />
-                    </FormGroup>
-                    <FormGroup controlId="message" bsSize="large">
-                        <FormControl
-                            componentClass="textarea"
-                            value={this.state.message}
-                            placeholder="Message"
-                            onChange={this.handleChange}
+                    </div>
+                    <div class="form-group has-feedback">
+                        <textarea class="form-control"
+                               autoFocus
+                               value={this.state.message}
+                               placeholder="Message"
+                               onChange={this.handleChange}
                         />
-                    </FormGroup>
-                    <Button
-                        className="float-right"
-                        bsStyle="primary"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        Submit
-                    </Button>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right" disabled={!this.validateForm()}>Submit</button>
                 </form>
             </div>
         );

@@ -6,3 +6,16 @@ body {
   display: flex;
   justify-content: center;
 }
+#feed{
+  width: 700px;
+  margin: auto;
+}
+.list-container{
+  background: #ecedee;
+}
+.padding-top{
+  padding-top:10px;
+}
+.media-body{
+  word-break:break-all
+}
