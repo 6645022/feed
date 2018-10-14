@@ -18,8 +18,6 @@ Web page that contains a comment feed with the ability to insert new comments an
 
 Wrote in React Framework
 
-Client application running by default on port 3000
-
 ###### NPM commands
 
 * ```cd client```
@@ -28,7 +26,6 @@ Client application running by default on port 3000
 
 * ```npm npm start``` - Start react application
 
-**Client Endpoint : [http://localhost:3000](http://localhost:3000)**    
 
 #### Server
 

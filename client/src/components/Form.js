@@ -2,10 +2,11 @@ import React, { Component } from "react";
 export default class Form extends Component {
     constructor() {
         super();
-        this.state = {
+        this.initialState = {
             email: "",
             message: ""
         };
+        this.state = this.initialState
     }
 
     validateForm() {
@@ -21,6 +22,8 @@ export default class Form extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit(this.state);
+        this.setState(this.initialState);
+
     }
 
     render() {
