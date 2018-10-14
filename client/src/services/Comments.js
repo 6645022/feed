@@ -10,7 +10,7 @@ export class Comments extends Api{
         const res = await this.post(this.route,data);
         return res
     }
-    async getComments(filter = null){
+    async getComments(){
         const res = await this.get(this.route);
         return res
     }

@@ -52,11 +52,11 @@ class Feed extends React.Component{
     render(){
         return (
             <div id="feed">
-                <div class="card">
-                    <div class="card-body">
+                <div className="card">
+                    <div className="card-body">
                         <Form onSubmit={this.addComment}/>
                     </div>
-                    <div class="card-body list-container">
+                    <div className="card-body list-container">
                         <Filter filter={this.filter}/>
                         <List items={this.state.data}/>
                     </div>

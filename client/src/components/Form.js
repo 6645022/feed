@@ -25,29 +25,26 @@ export default class Form extends Component {
 
     render() {
         return (
-
-            <div role="form" className="form">
-                <form onSubmit={this.handleSubmit}>
-
-
-                    <div class="form-group has-feedback">
-                        <input class="form-control"
-                               autoFocus
+            <div role="form" >
+                <form onSubmit={this.handleSubmit} className="form">
+                    <div className="form-group">
+                        <input className="form-control"
+                               id="email"
                                type="email"
                                value={this.state.email}
                                placeholder="Email"
                                onChange={this.handleChange}
                         />
                     </div>
-                    <div class="form-group has-feedback">
-                        <textarea class="form-control"
-                               autoFocus
-                               value={this.state.message}
-                               placeholder="Message"
-                               onChange={this.handleChange}
+                    <div className="form-group">
+                        <textarea className="form-control"
+                              id="message"
+                              value={this.state.message}
+                              placeholder="Message"
+                              onChange={this.handleChange}
                         />
                     </div>
-                    <button type="submit" class="btn btn-primary float-right" disabled={!this.validateForm()}>Submit</button>
+                    <button type="submit" className="btn btn-primary float-right" disabled={!this.validateForm()}>Submit</button>
                 </form>
             </div>
         );

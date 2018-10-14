@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 const Item = (props) => {
     return (
-        <div class="media padding-top">
-            <img class="mr-2 rounded" src={props.item.avatar} alt=""/>
-                <div class="media-body">
-                    <h6 class="mt-0">{props.item.email}</h6>
-                    <span class="text-muted">{props.item.message}</span>
+        <div className="media padding-top">
+            <img className="mr-2 rounded" src={props.item.avatar} alt=""/>
+                <div className="media-body">
+                    <h6 className="mt-0">{props.item.email}</h6>
+                    <span className="text-muted">{props.item.message}</span>
                 </div>
         </div>
     )
@@ -17,7 +17,7 @@ const ListItems = (props) => {
         return (<Item key={index} item={item}/>)
     });
     return (
-       <div>  { lists.length ? lists : <p>No Result</p> }</div>
+       <div>  { lists.length ? lists : <b>No Result</b> }</div>
     );
 };
 

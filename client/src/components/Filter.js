@@ -5,9 +5,6 @@ export default class Filter extends Component {
         super(props);
         this.timeout =  0;
     }
-    validateForm() {
-        return this.state.query.length > 0;
-    }
     handleChange(evt){
         var searchText = evt.target.value;
         if(this.timeout) clearTimeout(this.timeout);
@@ -18,9 +15,9 @@ export default class Filter extends Component {
 
     render() {
         return (
-            <form role="form">
-                <div class="form-group">
-                    <input class="form-control"
+            <form>
+                <div className="form-group">
+                    <input className="form-control"
                            autoFocus
                            type="text"
                            placeholder="Filter"
