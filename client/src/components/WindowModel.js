@@ -19,36 +19,40 @@ export default class WindowModel extends Component {
         this.state = {
             modalIsOpen: false
         };
-
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
+    componentWillReceiveProps(nextProps){
+        if (this.props.item !== nextProps.item) {
+            this.setState({
+                modalIsOpen: Object.keys(nextProps.item).length !== 0
+            });
+        }
 
-    openModal() {
+    }
+    openModal = ()=>{
         this.setState({modalIsOpen: true});
     }
-    closeModal() {
+    closeModal = ()=>{
         this.setState({modalIsOpen: false});
     }
     render() {
-        const {avatar,email,createdDate} = this.props.item;
-        const lastActivity = new Date(`${createdDate}`).toLocaleString();
-        return (
-            <div>
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    style={customStyles}>
-                    <div className="media padding-top">
-                        <img className="mr-2 rounded" src={avatar} alt=""/>
-                        <div className="media-body">
-                            <h6 className="mt-0">{email}</h6>
-                            <span className="text-muted"><small>Last Activity:{lastActivity}</small></span>
+            const {avatar,email,createdDate} = this.props.item;
+            const lastActivity = new Date(`${createdDate}`).toLocaleString();
+            return (
+                <div>
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        style={customStyles}>
+                        <div className="media padding-top">
+                            <img className="mr-2 rounded" src={avatar} alt=""/>
+                            <div className="media-body">
+                                <h6 className="mt-0">{email}</h6>
+                                <span className="text-muted"><small>Last Activity:{lastActivity}</small></span>
+                            </div>
                         </div>
-                    </div>
-                </Modal>
-            </div>
-        );
+                    </Modal>
+                </div>
+            );
+
     }
 }

@@ -10,7 +10,6 @@ class Feed extends React.Component{
     constructor(props){
         super(props);
 
-        this.windowModelRef = React.createRef();
         this.commentsService = new Comments();
         this.state = {
             data:[],
@@ -57,7 +56,6 @@ class Feed extends React.Component{
         try {
             const res = await this.commentsService.getLastActivity(email);
             this.setState({commentLastActivity:res.data});
-            this.windowModelRef.current.openModal();
             }catch(e) {
                 console.log('error',e)
         }
@@ -75,7 +73,8 @@ class Feed extends React.Component{
                         <List items={this.state.data} handleItemClick={this.handleItemClick}/>
                     </div>
                 </div>
-                <WindowModel ref={this.windowModelRef} item={this.state.commentLastActivity}/>
+                 <WindowModel item={this.state.commentLastActivity}/>
+
             </div>
     );
     }
