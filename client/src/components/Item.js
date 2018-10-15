@@ -8,7 +8,7 @@ export default class Item extends Component {
         const {avatar,email,message} = this.props.item;
         return (
             <div className="media padding-top">
-                <a href="#">
+                <a href="#0">
                     <img className="mr-2 rounded" src={avatar} alt="" onClick={() => this.handleClick(email)}/>
                 </a>
                 <div className="media-body">
